@@ -31,9 +31,9 @@
 
         $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "BASEDATOS");
 
-        $cadenaSQL = "SELECT agenda.*, Distrito.nombreDistrito 
+        $cadenaSQL = "SELECT agenda.*, distrito.distrito_nombre 
               FROM agenda 
-              LEFT JOIN Distrito ON agenda.idDistrito = Distrito.idDistrito";
+              LEFT JOIN distrito ON agenda.id = distrito.id";
 
         $resultado = mysqli_query($conexion, $cadenaSQL);
 
@@ -44,7 +44,7 @@
          "</td><td>" . $fila->telefijo .
          "</td><td>" . $fila->telefmovi .
          "</td><td>" . $fila->email .
-         "</td><td>" . $fila->nombreDistrito .
+         "</td><td>" . $fila->distrito_nombre .
          "</td></tr>";
        }
        ?>
