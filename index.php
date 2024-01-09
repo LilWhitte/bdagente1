@@ -33,7 +33,7 @@
 
         $cadenaSQL = "SELECT agenda.*, distrito.distrito_nombre 
               FROM agenda 
-              LEFT JOIN distrito ON agenda.id = distrito.id";
+              LEFT JOIN distrito ON agenda.id_distrito = distrito.id";
 
         $resultado = mysqli_query($conexion, $cadenaSQL);
 
