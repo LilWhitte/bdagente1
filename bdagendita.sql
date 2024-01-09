@@ -14,19 +14,19 @@ CREATE TABLE agenda
   idDistrito                 INT,
   CONSTRAINT agenda_codigoper_pk PRIMARY KEY (codigoper),
   CONSTRAINT fk_agenda_distrito
-    FOREIGN KEY (idDistrito)
-    REFERENCES Distrito(idDistrito)
+    FOREIGN KEY (id)
+    REFERENCES Distrito(id)
  );
 
 CREATE TABLE Distrito
  (
-  idDistrito                 INT AUTO_INCREMENT NOT NULL,
-  nombreDistrito             VARCHAR(45) NOT NULL,
+  id                 INT AUTO_INCREMENT NOT NULL,
+  distrito_nombre             VARCHAR(45) NOT NULL,
   CONSTRAINT distrito_pk PRIMARY KEY (idDistrito)
  );
 
-INSERT INTO Distrito (nombreDistrito) VALUES ('Chimbote');
-INSERT INTO Distrito (nombreDistrito) VALUES ('Nuevo Chimbote');
+INSERT INTO Distrito (distrito_nombre) VALUES ('Chimbote');
+INSERT INTO Distrito (distrito_nombre) VALUES ('Nuevo Chimbote');
 
 INSERT INTO agenda VALUES ('1', 'carlos', 'serna','av. palmeras 145','043524875', '942587568','carlos@hotmail.com', 'carlos serna', 1);
 INSERT INTO agenda VALUES ('2', 'carmen', 'figueroa','av. alamos f-5','043154784', '943124578','carmen@hotmail.com', 'carmen figeroa', 2);
